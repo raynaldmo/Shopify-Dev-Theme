@@ -1,0 +1,56 @@
+<div class="max-w-md">
+  <div class="text-5xl font-bold my-4">
+    {{  section.settings.title }}
+  </div>
+  <div class="my-4">
+    <p class="text-base md:text-xl leading-normal">
+      {{ section.settings.text }}
+    </p>
+  </div>
+  <div class="my-4">
+    {% unless section.settings.page_url %}
+      {% assign page_url = shop.url %}
+    {% else %}
+      {% assign page_url = section.settings.page_url %}
+    {% endunless %}
+    <a href="{{ page_url }}" class="px-4 inline py-2 text-base 
+      font-medium shadow bg-green-600 hover:bg-green-800 text-white">
+      {{ section.settings.button_label }}
+    </a>
+  </div>
+</div>
+
+<!-- Section attributes for for 404 page -->
+{% schema %}
+  {
+    "name": "404 Template",
+    "tag": "section",
+    "class": "flex items-start justify-center text-center py-7 h-screen",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "default": "404",
+        "label": "404 heading"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "default": "The page doesn't exist",
+        "label": "404 text"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "default": "Back to homepage",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "page_url",
+        "label": "Page Url"
+      }
+    ]
+  }
+
+{% endschema %}

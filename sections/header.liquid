@@ -4,7 +4,9 @@
     <div class="flex justify-between items-center py-6 md:justify-start md:space-x-10">
       <!-- STORE NAME / STORE LOGO -->
       <div class="flex justify-start lg:flex-1 truncate">
-        <h1 class="text-xl font-bold truncate">{{ shop.name }}</h1>
+        <a href="{{ routes.root_url }}">
+          <h1 class="text-xl font-bold truncate">{{ shop.name }}</h1>
+        </a>
       </div>
       <!-- Mobile menu button -->
       <div class="-mr-2 -my-2 ml-3 md:hidden">
@@ -125,7 +127,7 @@
 </div>
 
 
-
+<!-- Section attributes for page header -->
 {% schema %}
   {
     "name": "Header",
@@ -140,7 +142,7 @@
       {
         "type": "link_list",
         "id": "menu",
-        "label": "Header Menu",
+        "label": "Header menu",
         "default": "main-menu" 
       }
     ]
