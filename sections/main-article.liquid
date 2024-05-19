@@ -1,4 +1,8 @@
 <article class="py-8" itemscope itemtype="http://schema.org/BlogPosting">
+  {% comment %}
+    The following for loop with case is what enables the blocks to be
+    re-positioned in the theme customizer
+  {% endcomment %}
   {% for block in section.blocks %}
     {% case block.type %}
       {% when 'article_title' %}
